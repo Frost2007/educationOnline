@@ -30,7 +30,7 @@ public class User {
     private UserType role;
     @OneToOne(mappedBy ="user" )
     private Student student;
-//    @OneToOne(mappedBy = "user")
-//    private Teacher teacher;
+    @OneToOne(mappedBy = "user")
+    private Teacher teacher;
 
 }
