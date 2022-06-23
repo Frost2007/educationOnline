@@ -5,7 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import models.Teacher;
+
 
 import javax.persistence.*;
 
@@ -30,7 +30,7 @@ public class User {
     private UserType role;
     @OneToOne(mappedBy ="user" )
     private Student student;
-    @OneToOne(mappedBy = "user")
-    private Teacher teacher;
+//    @OneToOne(mappedBy = "user")
+//    private Teacher teacher;
 
 }
