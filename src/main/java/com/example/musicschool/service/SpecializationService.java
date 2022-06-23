@@ -25,4 +25,8 @@ public class SpecializationService {
         return specializationRepository.findById(id);
     }
 
+    public void deleteSpecializationById(int id){
+        specializationRepository.deleteById(id);
+    }
+
 }

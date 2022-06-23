@@ -25,4 +25,14 @@ public class TeacherService {
         return teacherRepository.findById(id);
     }
 
+    public void deleteById(int id){
+        teacherRepository.deleteById(id);
+    }
+
+    public Optional<Teacher> findTeacherBySpecilizationId(int id){
+        return teacherRepository.findBySpecializationId(id);
+    }
+
+
+
 }

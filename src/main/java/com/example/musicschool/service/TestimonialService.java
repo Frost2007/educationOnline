@@ -18,7 +18,7 @@ public class TestimonialService {
         return testimonialRepository.save(testimonial);
     }
 
-    public List<Testimonial> findAllTeachers() {
+    public List<Testimonial> findAllTestimonials() {
 
         return testimonialRepository.findAll();
     }
@@ -26,5 +26,9 @@ public class TestimonialService {
     public Optional<Testimonial> findById(int id) {
         return testimonialRepository.findById(id);
 
+    }
+
+    public void deleteTestimonialById(int Id){
+        testimonialRepository.deleteById(Id);
     }
 }
