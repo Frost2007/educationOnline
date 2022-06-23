@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import models.Teacher;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -25,9 +24,9 @@ public class Course {
     @ManyToOne
     @JoinColumn(name="student_id")
     private Student student;
-    @ManyToOne
-    @JoinColumn(name = "teacher_id")
-    private Teacher teacher;
+//    @ManyToOne
+//    @JoinColumn(name = "teacher_id")
+//    //private  String teacher;
     private String description;
     private int duration;
     @DateTimeFormat(pattern = "dd-MM-yyyy")
