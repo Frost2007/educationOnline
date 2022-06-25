@@ -17,7 +17,7 @@ public class Student {
     private int id;
     private int age;
     private int userId;
-    @OneToMany(mappedBy = "course", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToMany
     private List<Course> courses;
 
 }

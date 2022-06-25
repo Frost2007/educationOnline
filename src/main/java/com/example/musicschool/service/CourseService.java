@@ -12,8 +12,8 @@ import java.util.List;
 public class CourseService {
     private final CourseRepository courseRepository;
 
-    public List<Course> allCoursesOfStudent(int studentId){
-        return courseRepository.findAllByStudent_Id(studentId);
-    }
+    //public List<Course> allCoursesOfStudent(int studentId){
+      //  return courseRepository.findAllByStudent_Id(studentId);
+    //}
 
 }
