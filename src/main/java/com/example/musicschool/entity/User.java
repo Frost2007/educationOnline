@@ -28,9 +28,5 @@ public class User {
     @JoinColumn(name = "role")
     @Enumerated(EnumType.STRING)
     private UserType role;
-    @OneToOne(mappedBy ="user" )
-    private Student student;
-    @OneToOne(mappedBy = "user")
-    private Teacher teacher;
 
 }

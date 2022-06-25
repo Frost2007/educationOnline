@@ -21,7 +21,13 @@ public class TeacherController {
     @GetMapping("/{id}")
     public String teacherPage(@PathVariable int id, ModelMap modelMap){
         modelMap.addAttribute("teacher", teacherService.findById(id));
-        return "news-single";
+        return "teacher-page";
+    }
+
+    @GetMapping("/")
+    public String main(){
+        //modelMap.addAttribute("teacher", teacherService.findById(id));
+        return "404";
     }
 
 

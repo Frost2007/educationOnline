@@ -20,9 +20,9 @@ public class Teacher {
     private int Id;
     private int userId;
     @JoinColumn(name = "specialization_id")
-    @OneToOne
+    @ManyToOne
     private Specialization specialization;
     private String education;
-    @OneToMany(mappedBy = "course", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToMany
     private List<Course> courses;
 }
