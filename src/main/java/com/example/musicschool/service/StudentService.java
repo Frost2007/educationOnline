@@ -8,7 +8,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
+
 
 
 @Service
@@ -16,8 +16,8 @@ import java.util.Optional;
 public class StudentService {
     private final StudentRepository studentRepository;
 
-    public Optional<Student> findStudentById(int studentId){
-       return studentRepository.findById(studentId);
+    public Student findStudentById(int studentId){
+       return studentRepository.getById(studentId);
 
     }
     public Page<Student> findAllStudents(PageRequest pageRequest) {

@@ -24,7 +24,7 @@ public class TeacherController {
         return "teacher-page";
     }
 
-    @GetMapping("/")
+    @GetMapping("/teacher/")
     public String main(){
         //modelMap.addAttribute("teacher", teacherService.findById(id));
         return "404";

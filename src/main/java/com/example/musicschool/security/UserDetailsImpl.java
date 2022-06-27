@@ -3,6 +3,7 @@ package com.example.musicschool.security;
 import com.example.musicschool.entity.User;
 import com.example.musicschool.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -14,16 +15,17 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class UserDetailsImpl implements UserDetailsService {
 
+   @Autowired
     private final UserRepository userRepository;
 
-    @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Optional<User> byEmail = userRepository.findUserByEmail(username);
-        if (byEmail.isEmpty()) {
-            throw new UsernameNotFoundException("username not found");
+
+        @Override
+        public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+            Optional<User> userByEmail = userRepository.findUserByEmail(email);
+            if(userByEmail.isEmpty()){
+                throw new UsernameNotFoundException("User is not found");
+            }
+            return new CurrentUser(userByEmail.get());
         }
 
-        //return new CurrentUser(byEmail.get());
-        return new CurrentUser(byEmail.get());
     }
-}

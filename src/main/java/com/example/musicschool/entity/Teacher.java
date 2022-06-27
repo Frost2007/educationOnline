@@ -19,8 +19,8 @@ public class Teacher {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int Id;
     private int userId;
+    @OneToOne
     @JoinColumn(name = "specialization_id")
-    @ManyToOne
     private Specialization specialization;
     private String education;
     @ManyToMany
