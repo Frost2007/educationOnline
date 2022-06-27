@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Data
 @AllArgsConstructor
@@ -28,5 +29,8 @@ public class User {
     @JoinColumn(name = "role")
     @Enumerated(EnumType.STRING)
     private UserType role;
+    private String token;
+    private boolean active;
+    private LocalDateTime tokenCreatedDate;
 
 }
